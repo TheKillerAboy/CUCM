@@ -1,0 +1,33 @@
+.division{
+    padding: 0 20px 20px 0;
+    display: inline-block;
+    vertical-align:top;
+}
+#submit{
+    display: block;
+    vertical-align: 0;
+}
+.division>.title{
+    padding: 0 0 10px 0;
+}
+.division>div{
+    margin: 7px;
+}
+select,select>*{
+    width: 160px;
+}
+
+.labeled-combo>.title,.labeled-edit>.title{
+    width: 160px;
+}
+
+#footnote{
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#error{
+    font-weight: bolder;
+    color: red;
+    margin-bottom: 10px;
+}

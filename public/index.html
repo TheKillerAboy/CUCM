@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Generate CUCM CONFIGURATION</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css"/>
+</head>
+<body>
+    <div class="division">
+        <div class="title">Setup -</div>
+        <div class="labeled-edit" id="store-no">
+            <div class="title">Store Number:</div>
+            <input type="number"/>
+        </div>
+        <div class="labeled-edit" id="store-name">
+            <div class="title">Store Name:</div>
+            <input />
+        </div>
+        <div class="labeled-combo" id="store-type">
+            <div class="title">Store Type:</div>
+            <select></select>
+        </div>
+        <div class="labeled-combo" id="store-CUCMNode">
+            <div class="title">CUCM Node:</div>
+            <select></select>
+        </div>
+        <div class="labeled-edit" id="store-address">
+            <div class="title">Address:</div>
+            <input />
+        </div>
+        <div class="labeled-edit" id="phone-number">
+            <div class="title">Phone Number:</div>
+            <input type="number"/>
+        </div>
+    </div>
+    <div class="division">
+        <div class="title">Device Pool -</div>
+        <div class="labeled-combo" id="manager-group">
+            <div class="title">Cisco Unified Communications Manager Group:</div>
+            <select></select>
+        </div>
+        <div class="labeled-combo" id="region">
+            <div class="title">Region:</div>
+            <select></select>
+        </div>
+        <div class="labeled-combo" id="media-group">
+            <div class="title">Media Resourse Group List:</div>
+            <select></select>
+        </div>
+    </div>
+    <div class="division">
+        <div class="title">Translation Pattern Configure -</div>
+        <div class="labeled-combo" id="party-mask">
+            <div class="title">Called Party Transform Mask:</div>
+            <select></select>
+        </div>
+        <div class="labeled-edit" id="translation-pattern">
+            <div class="title">Translation Pattern:</div>
+            <input />
+        </div>
+    </div>
+    <div id="error" hidden>Not all fields have values</div>
+    <button id="submit">Get PDF</button>
+    <div id="footnote">Footnote: enable popups for this site</div>
+</body>
+<script src="javascripts/index.js"></script>
+</html>
