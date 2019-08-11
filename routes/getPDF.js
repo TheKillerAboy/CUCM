@@ -24,7 +24,7 @@ router.get('/defaults', function(req, res) {
     res.json(defaultData)
 });
 
-fs.readFile('apis\\google-sheet\\credentials.json', (err, content) => {
+fs.readFile(path.join(__dirname,'../apis/google-sheet/credentials.json'), (err, content) => {
     if (err) return console.log('Error loading client secret file:', err);
     authorize(JSON.parse(content),setDefaultData);
 });
