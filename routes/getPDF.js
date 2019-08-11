@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 
 const fs = require('fs');
 const readline = require('readline');
@@ -10,7 +11,7 @@ const spreadsheetId = '1P89Hs8TXhmciHGu4wkSizMBdOqcfKXUBSlmuCOrFrNY';
 
 /* GET home page. */
 router.post('/', function(req, res, next) {
-    fs.readFile('apis\\google-sheet\\credentials.json', (err, content) => {
+    fs.readFile(path.join(__dirname,'../apis/google-sheet/credentials.json'), (err, content) => {
         if (err) return console.log('Error loading client secret file:', err);
         authorize(JSON.parse(content), (auth)=>{
             writeSheet(auth,req.body,()=>{
@@ -64,7 +65,7 @@ function setDefaultData(auth){
 }
 
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
-const TOKEN_PATH = 'apis\\google-sheet\\token.json';
+const TOKEN_PATH = path.join(__dirname,'../apis/google-sheet/token.json');
 
 function authorize(credentials, callback) {
     const {client_secret, client_id, redirect_uris} = credentials.installed;
