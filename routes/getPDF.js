@@ -172,13 +172,14 @@ function writeSheet(auth,webData,callback) {
     const resource = {
         data,
         valueInputOption:'RAW',
+        request:[{
         "updateSheetProperties":{
             "properties":{
                 "sheetID":"1275095812",
                 "title":webData.storeCode
             },
             "fields":"title"
-        }
+        }}]
     };
     sheets.spreadsheets.values.batchUpdate({
         spreadsheetId,
