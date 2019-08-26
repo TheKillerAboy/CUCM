@@ -172,10 +172,6 @@ function writeSheet(auth,webData,callback) {
     const resource = {
         data,
         valueInputOption:'RAW',
-    };
-    sheets.spreadsheets.values.batchUpdate({
-        spreadsheetId,
-        resource,
         "updateSheetProperties":{
             "properties":{
                 "sheetID":"1275095812",
@@ -183,6 +179,10 @@ function writeSheet(auth,webData,callback) {
             },
             "fields":"title"
         }
+    };
+    sheets.spreadsheets.values.batchUpdate({
+        spreadsheetId,
+        resource
     }, (err, result) => {
         if (err) {
             console.log(err);
