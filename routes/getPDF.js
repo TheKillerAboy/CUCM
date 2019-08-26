@@ -178,7 +178,7 @@ function writeSheet(auth,webData,callback) {
     ];
 
     const resource = {
-            data,
+            requests:data,
             valueInputOption:'RAW'
         };
     sheets.spreadsheets.values.batchUpdate({
