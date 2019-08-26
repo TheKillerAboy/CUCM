@@ -166,19 +166,20 @@ function writeSheet(auth,webData,callback) {
         {
             range:'B101',
             values:[[webData.partyMask]]
-        }
-    ];
-
-    const resource = [{
+        },
+        {
             updateSpreadsheetProperties:{
                 properties:{
                     title:webData.storeCode
                 },
                 fields:"title"
-        }},{
+            }}
+    ];
+
+    const resource = {
             data,
             valueInputOption:'RAW'
-        }];
+        };
     sheets.spreadsheets.values.batchUpdate({
         spreadsheetId,
         resource
