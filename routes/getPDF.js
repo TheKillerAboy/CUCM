@@ -25,7 +25,7 @@ router.post('/', function(req, res, next) {
                     {
                         updateSpreadsheetProperties:{
                             properties:{
-                                title:webData.storeCode
+                                title:req.body.storeCode
                             },
                             fields:"title"
                         }
