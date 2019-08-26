@@ -152,6 +152,10 @@ function writeSheet(auth,webData,callback) {
             values:[[webData.mediaGroup]]
         },
         {
+            range:'B85',
+            values:[[webData.phoneNumber]]
+        },
+        {
             range:'B96',
             values:[[webData.translationPattern]]
         },
@@ -172,6 +176,13 @@ function writeSheet(auth,webData,callback) {
     sheets.spreadsheets.values.batchUpdate({
         spreadsheetId,
         resource,
+        "updateSheetProperties":{
+            "properties":{
+                "sheetID":"1275095812",
+                "title":webData.storeCode
+            },
+            "fields":"title"
+        }
     }, (err, result) => {
         if (err) {
             console.log(err);
