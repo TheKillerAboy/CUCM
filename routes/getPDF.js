@@ -173,7 +173,8 @@ function writeSheet(auth,webData,callback) {
                     title:webData.storeCode
                 },
                 fields:"title"
-            }}
+            }
+        }
     ];
 
     const resource = {
