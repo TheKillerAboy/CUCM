@@ -17,6 +17,27 @@ router.post('/', function(req, res, next) {
             writeSheet(auth,req.body,()=>{
                 res.send(`https://docs.google.com/spreadsheets/d/${spreadsheetId}/export?format=pdf&gid=1275095812`)
             });
+
+            const sheets = google.sheets({version: 'v4', auth});
+            sheets.spreadsheets.values.batchUpdate({
+                spreadsheetId,
+                resource:{requests:[
+                    {
+                        updateSpreadsheetProperties:{
+                            properties:{
+                                title:webData.storeCode
+                            },
+                            fields:"title"
+                        }
+                    }]}
+            }, (err, result) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    callback()
+                }
+            });
+
         });
     });
 });
@@ -166,19 +187,11 @@ function writeSheet(auth,webData,callback) {
         {
             range:'B101',
             values:[[webData.partyMask]]
-        },
-        {
-            updateSpreadsheetProperties:{
-                properties:{
-                    title:webData.storeCode
-                },
-                fields:"title"
-            }
         }
     ];
 
     const resource = {
-            requests:data,
+            data,
             valueInputOption:'RAW'
         };
     sheets.spreadsheets.values.batchUpdate({
