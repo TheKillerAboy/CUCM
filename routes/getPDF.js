@@ -18,6 +18,7 @@ router.post('/', function(req, res, next) {
                 res.send(`https://docs.google.com/spreadsheets/d/${spreadsheetId}/export?format=pdf&gid=1275095812`)
             });
             const sheets = google.sheets({version: 'v4', auth});
+            console.log(req.body.storeCode);
             sheets.spreadsheets.batchUpdate({
                 spreadsheetId,
                 resource:{
