@@ -169,17 +169,16 @@ function writeSheet(auth,webData,callback) {
         }
     ];
 
-    const resource = {
-        data,
-        valueInputOption:'RAW',
-        requests:[{
-        "updateSpreadsheetProperties":{
-            "properties":{
-                "title":webData.storeCode
-            },
-            "fields":"title"
-        }}]
-    };
+    const resource = [{
+            updateSpreadsheetProperties:{
+                properties:{
+                    title:webData.storeCode
+                },
+                fields:"title"
+        }},{
+            data,
+            valueInputOption:'RAW'
+        }];
     sheets.spreadsheets.values.batchUpdate({
         spreadsheetId,
         resource
