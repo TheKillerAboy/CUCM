@@ -173,9 +173,8 @@ function writeSheet(auth,webData,callback) {
         data,
         valueInputOption:'RAW',
         requests:[{
-        "updateSheetProperties":{
+        "updateSpreadsheetProperties":{
             "properties":{
-                "sheetID":"1275095812",
                 "title":webData.storeCode
             },
             "fields":"title"
