@@ -166,14 +166,6 @@ function writeSheet(auth,webData,callback) {
         {
             range:'B101',
             values:[[webData.partyMask]]
-        },
-        {
-            updateSpreadsheetProperties:{
-                properties:{
-                    title:webData.storeCode
-                },
-                fields:"title"
-            }
         }
     ];
 
