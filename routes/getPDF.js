@@ -175,14 +175,7 @@ function writeSheet(auth,webData,callback) {
     };
     sheets.spreadsheets.values.batchUpdate({
         spreadsheetId,
-        resource,
-        "updateSheetProperties":{
-            "properties":{
-                "sheetID":"1275095812",
-                "title":webData.storeCode
-            },
-            "fields":"title"
-        }
+        resource
     }, (err, result) => {
         if (err) {
             console.log(err);
