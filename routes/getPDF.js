@@ -172,7 +172,7 @@ function writeSheet(auth,webData,callback) {
     const resource = {
         data,
         valueInputOption:'RAW',
-        request:[{
+        requests:[{
         "updateSheetProperties":{
             "properties":{
                 "sheetID":"1275095812",
